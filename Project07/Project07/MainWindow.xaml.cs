@@ -18,7 +18,13 @@ namespace Project07
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            newAccount NewAccount = new newAccount();
+            NewAccount.ShowDialog();
         }
     }
 }
