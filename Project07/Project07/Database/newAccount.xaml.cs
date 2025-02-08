@@ -44,21 +44,8 @@ namespace Project07
                 Email = emailTextBox.Text
             };
 
-            // SQLite DB 파일 이름 지정
-            string accountDB = "Account.db";
-
-            // 내문서 경로 가져오는 방법
-            //string forderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            // 현재 프로젝트 실행 경로 가져오는 방법 (프로젝트\bin\Debug\net8.0-windows)
-            //string forderPath = Environment.CurrentDirectory;
-
-            // 현재 프로젝트 경로 가져오기
-            string projectPath = "../../../";
-            // 생성될 DB 경로(현재 프로젝트 경로 + 파일이름) 지정
-            string databasePath = System.IO.Path.Combine(projectPath, accountDB);
-
             // 지정된 경로에 생성할 DB 연결 객체 생성
-            SQLiteConnection connection = new SQLiteConnection(databasePath);
+            SQLiteConnection connection = new SQLiteConnection(App.databasePath);
             // Contact 클래스 정의를 기반으로 SQLite DB Table 생성 (테이블이 없을 경우, 있으면 X)
             connection.CreateTable<Account>();
 

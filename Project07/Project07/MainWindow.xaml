@@ -5,9 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project07"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="로그인" Height="600" Width="520">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Center" Margin="0,164,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="72" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="auto" />            
+            <RowDefinition Height="24" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160" />
+            <ColumnDefinition Width="*" />            
+            <ColumnDefinition Width="160" />            
+        </Grid.ColumnDefinitions>
 
+        <TextBlock x:Name="firstTitle"
+               Grid.Row="1"
+               Grid.Column="1" Text="취업 in" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="45" FontWeight="Bold" />
+        <TextBlock
+               Grid.Row="3"
+               Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" ><Run Language="ko-kr" Text="ID"/></TextBlock>
+        <TextBox x:Name="loginIDTextBox"
+             Grid.Row="3"
+             Grid.Column="1" VerticalContentAlignment="Center" FontSize="20" />
+        <TextBlock
+               Grid.Row="5"
+               Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" ><Run Language="ko-kr" Text="PW"/></TextBlock>
+        <PasswordBox x:Name="loginPWPasswordBox"
+             Grid.Row="5"
+             Grid.Column="1" FontSize="20" />
+        <Button x:Name="loginButton" Grid.Row="7"
+            Grid.Column="1"
+            Content="로그인" FontSize="36" Click="loginButton_Click" />
+        <Button x:Name="createButton" Grid.Row="9"
+            Grid.Column="1"
+            Content="회원가입" FontSize="36" Click="createButton_Click"/>        
     </Grid>
 </Window>

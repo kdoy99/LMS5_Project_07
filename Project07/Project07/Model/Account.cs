@@ -18,5 +18,10 @@ namespace Project07.Model
         public string Sex { get; set; }
         public string Contact { get; set; }
         public string Email { get; set; }
+
+        public override string ToString()
+        {
+            return $"{ID} - {Password}";
+        }
     }
 }
