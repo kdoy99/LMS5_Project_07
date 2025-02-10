@@ -22,5 +22,5 @@ namespace Project07
         // 생성될 DB 경로(현재 프로젝트 경로 + 파일이름) 지정
         public static string databasePath = System.IO.Path.Combine(projectPath, accountDB);
     }
-
 }
+

@@ -1,0 +1,7 @@
+﻿################################################################################
+# 이 .gitignore 파일은 Microsoft(R) Visual Studio에서 자동으로 만들어졌습니다.
+################################################################################
+
+/.vs/slnx.sqlite
+/Project07/Project07/bin/Debug/net8.0-windows/runtimes
+/Project07/Project07/bin/Debug/net8.0-windows

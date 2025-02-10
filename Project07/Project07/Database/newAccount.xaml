@@ -51,10 +51,10 @@
                Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" ><Run Language="ko-kr" Text="ID"/></TextBlock>
         <TextBox x:Name="idTextBox"
              Grid.Row="3"
-             Grid.Column="1" FontSize="20" VerticalContentAlignment="Center" />
+             Grid.Column="1" FontSize="20" VerticalContentAlignment="Center" TextChanged="idTextBox_TextChanged"/>
         <Button x:Name="idDupCheck" Grid.Row="3"
             Grid.Column="3"
-            Content="중복 확인" FontSize="24" />
+            Content="중복 확인" FontSize="24" Click="idDupCheck_Click" />
         <TextBlock
                Grid.Row="5"
                Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"><Run Language="ko-kr" Text="비밀번호"/></TextBlock>
@@ -70,7 +70,8 @@
         <TextBlock
                Grid.Row="9"
                Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"><Run Language="ko-kr" Text="생년월일"/></TextBlock>
-        <TextBox x:Name="ageTextBox"
+        <TextBox x:Name="ageTextBox" 
+             PreviewTextInput="Check_Num" Text="{Binding Text}"
              Grid.Row="9"
              Grid.Column="1" FontSize="20" VerticalContentAlignment="Center" />
         <TextBlock
@@ -78,22 +79,17 @@
              Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" ><Run Language="ko-kr" Text="ex) 990805"/></TextBlock>
         <TextBlock
                Grid.Row="11"
-               Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"><Run Language="ko-kr" Text="성별"/></TextBlock>
-        <TextBox x:Name="sexTextBox"
-             Grid.Row="11"
-             Grid.Column="1" FontSize="20" VerticalContentAlignment="Center" />
-        <TextBlock
-             Grid.Row="11"
-             Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" ><Run Language="ko-kr" Text="ex) 남 or 여"/></TextBlock>
+               Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"><Run Language="ko-kr" Text="성별"/></TextBlock>        
         <TextBlock
                Grid.Row="13"
                Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"><Run Language="ko-kr" Text="휴대폰"/></TextBlock>
         <TextBox x:Name="contactTextBox"
              Grid.Row="13"
-             Grid.Column="1" FontSize="20" VerticalContentAlignment="Center" />
-        <Button x:Name="contactDupCheck" Grid.Row="13"
+             Grid.Column="1" FontSize="20" VerticalContentAlignment="Center"
+                 PreviewTextInput="Check_ContactNum" Text="{Binding Text}" TextChanged="contactTextBox_TextChanged"/>
+        <Button x:Name="contactCheck" Grid.Row="13"
             Grid.Column="3"
-            Content="중복 확인" FontSize="24"/>
+            Content="인증" FontSize="24" Click="contactCheck_Click"/>
         <TextBlock
                Grid.Row="15"
                Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"><Run Language="ko-kr" Text="이메일"/></TextBlock>
@@ -105,6 +101,18 @@
             Content="가입" FontSize="36" Click="createAccount_Click" />
         <Button x:Name="cancelButton" Grid.Row="19"
             Grid.Column="1"
-            Content="취소" FontSize="36" Click="cancelButton_Click"  />
+            Content="취소" FontSize="36" Click="cancelButton_Click"  />        
+        <GroupBox Grid.Column="1" Grid.Row="11">            
+            <StackPanel>
+                <RadioButton x:Name="maleButton" Content="남"
+                     Grid.Row="11"
+                     Grid.Column="1"
+                     HorizontalAlignment="Left" VerticalAlignment="Center" Checked="maleButton_Checked"/>
+                <RadioButton x:Name="femaleButton" Content="여"
+                     Grid.Row="11"
+                     Grid.Column="1"
+                     HorizontalAlignment="Left" VerticalAlignment="Center" Checked="femaleButton_Checked"/>
+            </StackPanel>
+        </GroupBox>
     </Grid>
 </Window>

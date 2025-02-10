@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Project07.Model;
+using SQLite;
+
 
 namespace Project07
 {
@@ -22,6 +25,19 @@ namespace Project07
         public mainPage()
         {
             InitializeComponent();
+            ReadNoticeDB();
+        }        
+        private void ReadNoticeDB()
+        {
+            List<Notice> notices;
+
+            using (SQLiteConnection connection = new SQLiteConnection(App.databasePath)) // databasePath2 : Notice 정보 들어있는 DB
+            {
+                connection.CreateTable<Notice>();
+                notices = connection.Table<Notice>().ToList();
+            }
+
+            recommendList.ItemsSource = notices;
         }
     }
 }

@@ -5,8 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project07"
         mc:Ignorable="d"
-        Title="mainPage" Height="450" Width="800">
+        Title="mainPage" Height="600" Width="520">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="320" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="200" />
+
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="1" Content="취업 in" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="45" FontWeight="Bold" />
+        <ListView x:Name="recommendList" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.RowSpan="2" Grid.Column="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding CompanyInfo}"
+                                   FontSize="20"
+                                   FontWeight="Bold"/>                        
+                        <TextBlock Text="{Binding Task}"                                   
+                                   FontSize="15"
+                                   Foreground="Blue"/>
+                        <TextBlock Text="{Binding Position}"
+                                   FontSize="15"
+                                   Foreground="Blue"/>
+                        <TextBlock Text="{Binding Qualification}"
+                                   FontSize="15"
+                                   Foreground="Blue"/>
+                        <TextBlock Text="{Binding Place}"
+                                   FontSize="15"
+                                   Foreground="Blue"/>
+                        <TextBlock Text="{Binding Welfare}"
+                                   FontSize="15"
+                                   Foreground="Blue"/>
+                        <TextBlock Text="{Binding Preference}"
+                                   FontSize="15"
+                                   Foreground="Blue"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Right" Margin="0,10,10,0" TextWrapping="Wrap" Text="로그아웃" VerticalAlignment="Top" Grid.RowSpan="2" FontSize="16" FontWeight="Bold"/>
+        <Button Content="새로고침" Grid.Row="1" Grid.Column="0" Margin="10,10,10,10"/>
     </Grid>
 </Window>
