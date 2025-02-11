@@ -38,15 +38,7 @@ namespace Project07
             }
 
             RecommendList.ItemsSource = notices;
-        }
-
-        private void searchButton_Click(object sender, RoutedEventArgs e)
-        {
-            //// 페이지 이동
-            searchResultPage SearchResultPage = new searchResultPage();
-            Close();
-            SearchResultPage.ShowDialog();
-        }
+        }              
 
         private void logoutButton_Click(object sender, RoutedEventArgs e)
         {

@@ -22,7 +22,7 @@
             
 
         </StackPanel>
-        <Label Grid.Column="1" Content="취업 in" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="40" FontWeight="Bold"/>
+        <Label Grid.Column="1" Content="공고 상세정보" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="40" FontWeight="Bold"/>
         <Button Content="뒤로가기" HorizontalAlignment="Center" Margin="0,10,0,80" Click="Button_Click"/>
 
     </Grid>
