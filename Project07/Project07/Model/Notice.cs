@@ -7,7 +7,7 @@ using SQLite;
 
 namespace Project07.Model
 {
-    class Notice
+    public partial class Notice
     {
         [PrimaryKey, AutoIncrement]
         public int NoticeNumber { get; set; } // 고용정보 넘버
