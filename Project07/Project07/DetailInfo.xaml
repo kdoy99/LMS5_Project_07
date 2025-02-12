@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project07"
         mc:Ignorable="d"
-        Title="DetailInfo" Height="600" Width="520">
+        Title="공고" Height="600" Width="520">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*" />
