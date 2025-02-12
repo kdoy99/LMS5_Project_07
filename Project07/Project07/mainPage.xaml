@@ -14,15 +14,13 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="75" />
-            <RowDefinition Height="75" />
+            <RowDefinition Height="75" />            
             <RowDefinition Height="*" />
-            
-            
             <RowDefinition Height="10" />
 
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="1" Content="취업 in" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40" FontWeight="Bold" />
-        <ListView x:Name="RecommendList" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=10}" Grid.Column="1" MouseDoubleClick="RecommendList_MouseDoubleClick">
+        <ListView x:Name="RecommendList" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=10}" Grid.Column="1" MouseDoubleClick="RecommendList_MouseDoubleClick" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -51,10 +49,18 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Content="회원정보" FontSize="16" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center" Margin="290,10,50,10"/>
         <Button x:Name="logoutButton" Grid.Column="1" Content="로그아웃" Margin="380,10,10,10" FontSize="16" Click="logoutButton_Click" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="searchTextBox" Grid.Column="1" Margin="0,10,70,10" Grid.Row="1" TextWrapping="Wrap"/>
-        <Button x:Name="searchButton" Grid.Column="1" Content="검색" Margin="360,10,0,10" Grid.Row="1" FontSize="16"/>
+        <TextBox x:Name="searchTextBox" Margin="0,10,120,10" Grid.Row="1" TextWrapping="Wrap" TextChanged="searchTextBox_TextChanged" Grid.Column="1" FontSize="16" VerticalContentAlignment="Center"/>
+        <Button x:Name="searchButton" Grid.Column="1" Content="검색" Margin="300,10,70,10" Grid.Row="1" FontSize="16"/>
+        <ComboBox x:Name="FilterComboBox" Grid.Column="1" Margin="360,10,10,10" Grid.ColumnSpan="2" Grid.Row="1" FontSize="12" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectionChanged="FilterComboBox_SelectionChanged">
+            <ComboBoxItem Selector.IsSelected="True">회사명</ComboBoxItem>
+            <ComboBoxItem Selector.IsSelected="True">담당 업무</ComboBoxItem>
+            <ComboBoxItem Selector.IsSelected="True">포지션</ComboBoxItem>
+            <ComboBoxItem Selector.IsSelected="True">자격요건</ComboBoxItem>
+            <ComboBoxItem Selector.IsSelected="True">근무지</ComboBoxItem>
+            <ComboBoxItem Selector.IsSelected="True">복지</ComboBoxItem>
+            <ComboBoxItem Selector.IsSelected="True">우대조건</ComboBoxItem>
+        </ComboBox>
 
     </Grid>
 </Window>

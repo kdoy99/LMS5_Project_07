@@ -73,5 +73,12 @@ namespace Project07
             Close();
             mainPage.ShowDialog();
         }
+
+        private void CompanyInfo_Click(object sender, RoutedEventArgs e)
+        {
+            CompanyInfo companyInfo = new CompanyInfo(detailNotice);
+            Close();
+            companyInfo.ShowDialog();
+        }
     }
 }
